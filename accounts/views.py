@@ -19,7 +19,7 @@ def signup(request):
             user = form.save()
             # log the user in
             login(request, user)
-            return redirect('loggedIn/')
+            return redirect('accounts:logged')
     else:
         # create new instance of the UserCreationForm
         form = UserCreationForm()
@@ -29,7 +29,7 @@ def signup(request):
     return render(request, 'accounts/signup.html', {'form': form})
 
 
-def login(request):
+def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
@@ -41,7 +41,7 @@ def login(request):
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
             else:
-                return redirect('accounts:loggedIn')
+                return redirect('accounts:logged')
     else:
         form = AuthenticationForm
     return render(request, 'accounts/login.html', {'form': form})
@@ -49,4 +49,4 @@ def login(request):
 
 @login_required(login_url='accounts:login')
 def logged(request):
-    return render(request, 'accounts/loggedIn.html')
+    return render(request, 'accounts/LoggedIn.html')
