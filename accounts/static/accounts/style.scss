@@ -5,6 +5,14 @@ body {
     background: #34495e;
 }
 
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 40px;
+}
+
 .box {
     width: 300px;
     padding: 40px;
