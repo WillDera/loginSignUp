@@ -6,11 +6,13 @@ body {
 }
 
 section {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: white;
-    font-size: 40px;
+    text-align: center;
+
+    h1 {
+        align-content: center;
+        color: white;
+        font-size: 40px;
+    }
 }
 
 .box {

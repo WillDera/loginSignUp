@@ -6,9 +6,12 @@ body {
 }
 
 section {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  text-align: center;
+}
+
+section h1 {
+  -ms-flex-line-pack: center;
+      align-content: center;
   color: white;
   font-size: 40px;
 }
