@@ -11,8 +11,9 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  color: white;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background: #191919;
   text-align: center;
 }
@@ -21,6 +22,13 @@ body {
   color: white;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+.box .errorlist li {
+  color: red;
+  list-style: none;
+  text-align: left;
+  justify-content: center;
 }
 
 .box input[type="email"],
@@ -67,4 +75,5 @@ body {
 .box input[type="submit"]:hover {
   background: #2ecc71;
 }
+
 /*# sourceMappingURL=style.css.map */
