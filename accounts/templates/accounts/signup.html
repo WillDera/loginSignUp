@@ -1,9 +1,7 @@
 {% extends "base_layout.html" %} {% block content %}
-<form class="box" action="index.html" method="post">
+<form class="box" action="{% url 'accounts:signup' %}" method="post">
   <h1>Sign Up</h1>
-  <input type="email" name="" placeholder="email" />
-  <input type="text" name="" placeholder="Username" />
-  <input type="password" name="" placeholder="Password" />
-  <input type="submit" name="" value="Sign Up" />
+  {% csrf_token %} {{ form }}
+  <input type="submit" value="Signup" />
 </form>
 {% endblock %}

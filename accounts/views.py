@@ -19,7 +19,7 @@ def signup(request):
             user = form.save()
             # log the user in
             login(request, user)
-            return redirect('accounts:loggedIn')
+            return redirect('loggedIn/')
     else:
         # create new instance of the UserCreationForm
         form = UserCreationForm()
@@ -33,6 +33,9 @@ def login(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
+            # get user details
+            user = form.get_user()
+            # log the user in
             login(request, user)
 
             if 'next' in request.POST:
